@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคิดเลข</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f4f8;
+            margin: 0;
+        }
+        .calculator {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: center;
+        }
+        .display {
+            font-size: 36px;
+            text-align: right;
+            height: 60px;
+            line-height: 60px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #2e3a59;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .button {
+            padding: 20px;
+            font-size: 22px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background-color: #f1f3f7;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s ease-in-out;
+        }
+        .button:hover {
+            background-color: #e2e6ea;
+        }
+        .button:active {
+            transform: scale(0.98);
+        }
+        .button.operator {
+            background-color: #ff5722;
+            color: white;
+        }
+        .button.operator:hover {
+            background-color: #f44336;
+        }
+        .button.equals {
+            background-color: #4caf50;
+            color: white;
+            grid-column: span 2;
+        }
+        .button.equals:hover {
+            background-color: #45a049;
+        }
+        .button.clear {
+            background-color: #dc3545;
+            color: white;
+        }
+        .button.clear:hover {
+            background-color: #c82333;
+        }
+        .button:disabled {
+            background-color: #e0e0e0;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="button clear" onclick="clearDisplay()">C</button>
+            <button class="button operator" onclick="appendToDisplay('+')">+</button>
+            <button class="button operator" onclick="appendToDisplay('-')">-</button>
+            <button class="button operator" onclick="appendToDisplay('/')">/</button>
+            <button class="button" onclick="appendToDisplay('7')">7</button>
+            <button class="button" onclick="appendToDisplay('8')">8</button>
+            <button class="button" onclick="appendToDisplay('9')">9</button>
+            <button class="button operator" onclick="appendToDisplay('*')">*</button>
+            <button class="button" onclick="appendToDisplay('4')">4</button>
+            <button class="button" onclick="appendToDisplay('5')">5</button>
+            <button class="button" onclick="appendToDisplay('6')">6</button>
+            <button class="button" onclick="appendToDisplay('1')">1</button>
+            <button class="button" onclick="appendToDisplay('2')">2</button>
+            <button class="button" onclick="appendToDisplay('3')">3</button>
+            <button class="button equals" onclick="calculate()">=</button>
+            <button class="button" onclick="appendToDisplay('0')">0</button>
+            <button class="button" onclick="appendToDisplay('.')">.</button>
+        </div>
+    </div>
+
+    <script src="src.js"></script>
+
+</body>
+</html>
